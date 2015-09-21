@@ -1,4 +1,4 @@
-import sqlite3
+﻿import sqlite3
 connection = sqlite3.connect('game.db')
 
 def printData(data):
@@ -70,10 +70,43 @@ def deletePerson():
         printData(print_rows)
         change_id = raw_input(" type the id of the character to update: ")
         print(" Change id: ", change_id)
-    delete = raw_imput(" Are you sure you want to delete this character y/n? ")
+    delete = raw_input(" Are you sure you want to delete this character y/n? ")
     if delete == "y":
        select_specificperson = "DELETE FROM persons WHERE NAME = '{}';".format(change_id)
        connection.execute(select_specificperson)
        connection.commit()
        print( "Number of changes : ",connection.total_changes)
 deletePerson()
+
+def choices():
+    print (" What would you like to do ?")
+    print (" 1. Add a new character")
+    print (" 2. View all charaters")
+    print (" 3. Search for a character")
+    print( " 4. Delete a character")
+    print (" 5. EXIT")
+    ask = raw_input(" Enter the number of your choice: ")
+    if ask == '1':
+       newPerson()
+    elif ask == '2':
+       checkPerson()
+    elif ask == '3':
+        specificPerson()
+    elif ask == '4':
+        deletePerson()
+    else:
+        print("exiting the program")
+        return
+choices()
+
+def main():
+    do_again = True
+    while do_again == True :
+          choices()
+          ask_again = raw_input("Would you like to do something else y/n:  ")
+          if ask_again != 'y':
+             do_again == False
+
+
+
+
