@@ -18,7 +18,9 @@ def createTable():
                                          occupation TEXT, \
                                          age INT);")
 createTable()
-
+"""
+Insert new person
+"""
 def newPerson():
     print(" We need the following information from you")
     name = raw_input("Name:   ")
