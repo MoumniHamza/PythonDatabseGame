@@ -42,7 +42,9 @@ def checkPerson():
     rows = selection.fetchall()
     print(rows)
 checkPerson()
-
+"""
+Check for a specific person
+"""
 def specificPerson():
     name = raw_input("name: ")
     select_specificperson = "SELECT * FROM persons WHERE NAME = '{}';".format(name)
