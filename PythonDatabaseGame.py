@@ -1,4 +1,4 @@
-﻿import sqlite3
+import sqlite3
 connection = sqlite3.connect('game.db')
 
 def printData(data):
@@ -8,8 +8,9 @@ def printData(data):
         print "gender: ", name[2]
         print "occupation: ", name[3]
         print "age: ", name[4]
-
-
+"""
+Creating a table
+"""
 def createTable():
     connection.execute("CREATE TABLE if not exists persons(id INTEGER PRIMARY KEY AUTOINCREMENT, \
                                          name TEXT, \
